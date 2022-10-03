@@ -1,0 +1,1 @@
+exports.users = [{ id: 1, username: 'test', password: 'test', firstname: 'ftest', lastname: 'ltest', token: '' }];
