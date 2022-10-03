@@ -6,7 +6,7 @@ const tokenList = {};
 jwtSecretString = "Secretkey$123";
 
 function getAccessToken(payload) {
-    return jwt.sign({ user: payload }, jwtSecretString, { expiresIn: '1min' });
+    return jwt.sign({ user: payload }, jwtSecretString, { expiresIn: '15min' });
 }
 
 function getRefreshToken(payload) {
@@ -17,7 +17,7 @@ function getRefreshToken(payload) {
             tokenList = tokenList.filter(token => token.userId !== payload.id);
         }
     }
-    const refreshToken = jwt.sign({ user: payload }, jwtSecretString, { expiresIn: '1min' });
+    const refreshToken = jwt.sign({ user: payload }, jwtSecretString, { expiresIn: '15min' });
     const response = {
         id: uuidv1(),
         userId: payload.id,
